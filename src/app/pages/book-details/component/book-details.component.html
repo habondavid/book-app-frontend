@@ -1,0 +1,24 @@
+<div *ngIf="book" class="book-data-sheet-container">
+    <div class="flex-container">
+        <img [src]="book.imgUrl ? book.imgUrl : 'assets/Book_IMG.jpg'">
+        <div class="book-data-container">
+            <h1>
+                <span>{{book.title}}</span>
+                <span *ngIf="book.subtitle"> - {{book.subtitle}}</span>
+            </h1>
+            <h2><i *ngFor="let author of book.authors">{{author}}; </i></h2>
+            <p><b>Kiadó:</b> {{book.publisher}}</p>
+            <p><b>Nyelv:</b> {{book.language}}</p>
+            <p><b>Kiadás éve:</b> {{book.publicationDate}}</p>
+            <p><b>Oldalak száma:</b> {{book.numberOfPages}}</p>
+            <p *ngIf="book.categories">
+                <b>Kategóriák: </b><br>
+                <span *ngFor="let category of book.categories">{{category}}<br></span>
+            </p>
+        </div>
+    </div>
+    <div *ngIf="book.description">
+        <hr>
+        <div id="description" [innerHTML]="book.description"></div>
+    </div>
+</div>

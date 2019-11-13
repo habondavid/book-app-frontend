@@ -1,0 +1,15 @@
+<div class="form-container">
+    <div>
+        <div class="btn-group" style="padding-bottom: 20px;">
+            <button type="button" class="btn btn-secondary" [ngClass]="{'active': mode === 'login'}"
+                (click)="activate('login')">Login</button>
+            <button type="button" class="btn btn-secondary" [ngClass]="{'active': mode === 'register'}"
+                (click)="activate('register')">Register</button>
+        </div>
+
+        <app-login *ngIf="mode === 'login'; else register"></app-login>
+        <ng-template #register>
+            <app-register></app-register>
+        </ng-template>
+    </div>
+</div>

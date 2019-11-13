@@ -1,0 +1,42 @@
+$yellow: rgb(190, 148, 56);
+$light-yellow: rgb(155, 129, 74);
+
+.book-data-sheet-container {
+    margin: auto;
+    width: 80%;
+
+    img {
+        width: 300px;
+        height: 460px;
+    }
+
+    @media screen and (max-width: 800px) {
+        width: 100%;
+    }
+}
+
+.book-data-container {
+    text-align: center;
+
+    h1 {
+        color: $yellow;
+    }
+
+    h2 {
+        color: $light-yellow;
+    }
+}
+
+hr {
+    margin-top: 5%;
+    background-color: lightgray;
+    color: lightgray;
+
+    @media screen and (max-width: 800px) {
+        width: 80%;
+    }
+}
+
+#description {
+    padding: 5%;
+}
